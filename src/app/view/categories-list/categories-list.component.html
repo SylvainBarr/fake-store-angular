@@ -1,0 +1,6 @@
+<ul class="mt-5 list-group list-group-flush">
+  <li *ngFor="let category of categories$|async" class="list-group-item">
+    <a [routerLink]="['/', 'produits', 'categories', category]"
+    class="link link-dark">{{category}}</a>
+  </li>
+</ul>

@@ -1,0 +1,22 @@
+<header class="p-3 text-bg-dark">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <h3 class="text-secondary me-3">Fake Store</h3>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a routerLink="/produits" class="nav-link px-2 text-white">Produits</a></li>
+        <li><a routerLink="/produits/categories" class="nav-link px-2 text-white">Catégories</a></li>
+      </ul>
+
+      <div class="text-end">
+        <a *ngIf="!(token$ | async)" routerLink="/connexion" class="btn btn-outline-light me-2">Connexion</a>
+
+        <ng-container *ngIf="token$ | async">
+          <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle mx-2">
+          <a routerLink="/mon-profil" class="btn btn-outline-light mx-1">Mon profil</a>
+          <button (click)="onClickLogout()" class="btn btn-outline-light mx-1">Me déconnecter</button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</header>
